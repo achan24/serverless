@@ -2,12 +2,15 @@ const getRandomDataJoke = async() => {
 
   // return "Why shouldn't you wear glasses when you play football.  Because it's a contact sport."
 
-  const url = "https://icanhazdadjoke.com/"
-  const jokeStream = await fetch(url, {
-    headers: {
-      Accept: "application/json"
-    }
-  })
+  // const url = "https://icanhazdadjoke.com/"
+  // const jokeStream = await fetch(url, {
+  //   headers: {
+  //     Accept: "application/json"
+  //   }
+  // })
+
+  const url = "/.netlify/functions/jokes";
+  const jokeStream = await fetch(url);
 
   const jsonJoke = await jokeStream.json();
   const joke = jsonJoke.joke;
